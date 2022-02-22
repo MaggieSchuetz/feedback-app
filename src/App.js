@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import FeedbackList from './components/FeedbackList';
+import { useState } from 'react';
+import FeedbackData from './data/FeedbackData';
 
-function App() {
+export default function App() {
+  const [feedback, setFeedback] = useState(FeedbackData);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />{' '}
+      {/* text is a prop that is passed in HERE and received and applied in the Header component */}
+      <div className="container">
+        {' '}
+        {/*with Emmet you can now write .myClass and it will give you another div with this class name if you configure it in JSON settings*/}
+        <FeedbackList feedback={feedback} />
+      </div>
+    </>
   );
 }
-
-export default App;
