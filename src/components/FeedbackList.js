@@ -18,7 +18,7 @@ function FeedbackList({ feedback, handleDelete }) {
 FeedbackList.propTypes = {
   feedback: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired,
+      id: PropTypes.number.isRequired, //throws an error with the uuidv4() because it's no longer true!
       text: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
     })
